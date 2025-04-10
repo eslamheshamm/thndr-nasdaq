@@ -11,7 +11,6 @@ function App() {
 	const [debouncedSearch] = useDebounceValue(searchQuery, 500);
 	const { ref, inView } = useInView();
 
-	// Setup infinite query
 	const { data, fetchNextPage, isLoading, isFetchingNextPage, isError, error } =
 		useInfiniteQuery({
 			queryKey: ["stocks", debouncedSearch],
@@ -23,14 +22,12 @@ function App() {
 			initialPageParam: 20,
 			// Custom retry logic to prevent retries for rate limiting
 			retry: (failureCount, error) => {
-				// Don't retry rate limit errors
 				if (
 					error instanceof Error &&
 					error.message.includes("Rate limit exceeded")
 				) {
 					return false;
 				}
-				// For other errors, retry up to 1 time
 				return failureCount < 1;
 			},
 		});
@@ -47,7 +44,7 @@ function App() {
 
 	return (
 		<>
-			<header className=" max-w-screen-lg mx-auto my-8 px-4 flex flex-col ">
+			<header className=" max-w-screen-lg mx-auto my-8 px-4 flex flex-col">
 				<h1 className="text-xl flex-shrink-0 mb-4">Search Stocks</h1>
 				<div className="flex items-center gap-2">
 					<Input

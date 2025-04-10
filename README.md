@@ -47,11 +47,9 @@ This is a stock market application that displays stocks listed on the Nasdaq exc
 
 - React
 - TypeScript
-- Zustand for state management
-- Axios for API requests
 - Tailwind CSS for styling
-- React Infinite Scroll Component for infinite scrolling
 - Vitest for testing
+- React-query for data fetching
 
 ## Testing
 

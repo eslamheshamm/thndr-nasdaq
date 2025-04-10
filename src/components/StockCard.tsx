@@ -1,10 +1,7 @@
 import { Stock } from "../lib/types";
 
 const StockCard = ({ stock }: { stock: Stock }) => (
-	<li
-		className="p-4 border rounded-xl shadow-sm h-full w-full "
-		aria-labelledby={`stock-name-${stock.ticker}`}
-	>
+	<li className="p-4 border rounded-xl shadow-sm h-full w-full ">
 		<h2 id={`stock-name-${stock.ticker}`} className="font-semibold">
 			{stock.name}
 		</h2>

@@ -1,13 +1,6 @@
 import { Stock } from "../lib/types";
 import StockCard from "./StockCard";
-import { Skeleton } from "./ui/skeleton";
-
-const SkeletonCard = () => (
-	<li className="p-4 border rounded-xl shadow-sm h-full w-full">
-		<Skeleton className="h-6 w-3/4 mb-2" />
-		<Skeleton className="h-4 w-1/2" />
-	</li>
-);
+import { SkeletonCard } from "./SkeletonCard";
 
 const StockList = ({
 	isLoading,
@@ -49,11 +42,7 @@ const StockList = ({
 					))}
 				</ul>
 			) : null}
-			{isError && (
-				<p className="text-center py-8 text-red-500 font-bold">
-					{error.message || "An error occurred while fetching stocks."}
-				</p>
-			)}
+
 			{isFetchingNextPage && !isError && (
 				<div aria-live="polite">
 					<ul
@@ -65,6 +54,11 @@ const StockList = ({
 						))}
 					</ul>
 				</div>
+			)}
+			{isError && (
+				<p className="text-center py-4 text-red-500 font-bold">
+					{error.message || "An error occurred while fetching stocks."}
+				</p>
 			)}
 		</section>
 	);
