@@ -48,7 +48,6 @@ This is a stock market application that displays stocks listed on the Nasdaq exc
 - React
 - TypeScript
 - Tailwind CSS for styling
-- Vitest for testing
 - React-query for data fetching
 
 ## Testing
