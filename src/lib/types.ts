@@ -5,6 +5,9 @@ export interface Stock {
 
 export interface StockResponse {
 	results: Stock[];
+	message: string;
+	success: boolean;
+	isEmpty?: boolean;
 }
 
 export interface StockStore {
