@@ -12,9 +12,7 @@ function App() {
 		const loadStocks = async () => {
 			try {
 				const data = await fetchStocks(debouncedSearch);
-				if (data.message) {
-					setStocks([]);
-				} else {
+				if (data.success) {
 					setStocks(data.results);
 				}
 			} catch (error) {
